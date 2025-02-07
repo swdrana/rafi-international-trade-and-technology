@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="container mx-auto">
       {/* rafi-international-trade-and-technology */}
-      <h1>Welcome to Rafi International Trade and technology</h1>
+      <h1 className=" text-2xl">Welcome to Rafi International Trade and technology</h1>
     </main>
   );
 }
