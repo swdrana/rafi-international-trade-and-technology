@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
@@ -11,17 +8,13 @@ on:
 
 jobs:
   build:
-
-    # self-hosted ই লিখতে হবে এখানে
     runs-on: self-hosted
 
     strategy:
       matrix:
-      # VPS এর Node Version দিতে হবে (Array এর মধ্যে কমা দিয়ে multiple ভার্শন দেওয়া যাবে) 
         node-version: [22.13.1]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     env: 
-    # এটা আসবে Seeting   ->   Secrets and Variables  -> Actions -> Repository Secrets
       NEXT_WEBSITE_URL: ${{secrets.NEXT_WEBSITE_URL}}
 
     steps:
@@ -39,9 +32,7 @@ jobs:
 
     # কারণ, পুশ করার পর pm2 restart করতে হয় তার জন্য project ফোল্ডার এ গিয়ে build করতে হবে এজন্য আমাদের সেখানে যেতে হবে আগে তাই বোঝার জন্য এটা লিখেছি পরের লাইনে আমরা Directory পরিবর্তন করতে আমদের Project ফোল্ডার এ যেতে চাই যেখানে package.json আছে। 
     - name: Change Directory 
-
-     run: cd /home/rafi/actions-runner/_work/rafi-international-trade-and-technology/rafi-international-trade-and-technology/
+      run: cd /home/rafi/actions-runner/_work/rafi-international-trade-and-technology/rafi-international-trade-and-technology/
      
     # কারণ rafi নামে App টির ID: 0  এখানে আমার মনে হয় নাম লিখলেও হবে যেমনঃ - run: pm2 restart rafi
-    - run: pm2 restart 0 
-    
+    - run: pm2 restart 0
