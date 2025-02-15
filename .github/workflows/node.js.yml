@@ -32,7 +32,7 @@ jobs:
 
     # কারণ, পুশ করার পর pm2 restart করতে হয় তার জন্য project ফোল্ডার এ গিয়ে build করতে হবে এজন্য আমাদের সেখানে যেতে হবে আগে তাই বোঝার জন্য এটা লিখেছি পরের লাইনে আমরা Directory পরিবর্তন করতে আমদের Project ফোল্ডার এ যেতে চাই যেখানে package.json আছে। 
     - name: Change Directory 
-      run: cd /home/rafi/actions-runner/_work/rafi-international-trade-and-technology/rafi-international-trade-and-technology/
+      run: cd /home/client/actions-runner/_work/rafi-international-trade-and-technology/rafi-international-trade-and-technology/
      
     # কারণ rafi নামে App টির ID: 0  এখানে আমার মনে হয় নাম লিখলেও হবে যেমনঃ - run: pm2 restart rafi
     - run: pm2 restart 0
